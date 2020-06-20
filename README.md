@@ -3,3 +3,7 @@
 
 # cppProjectTemplate
 A C++ Project template
+
+By default, this repo uses [Bazel](https://www.bazel.build) as the main build tool.
+
+It pre-includes a couple of open source library BUILD rules, but feel free to remove them as needed.
