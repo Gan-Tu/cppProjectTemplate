@@ -1,0 +1,11 @@
+load("@rules_cc//cc:defs.bzl", "cc_test")
+
+exports_files(["test_config.yml"])
+
+cc_test(
+    name = "dummy_test",
+    srcs = ["dummy_test.cc"],
+    deps = [
+        "@com_google_test//:gtest_main",
+    ],
+)
