@@ -14,40 +14,37 @@
 
 load("@rules_cc//cc:defs.bzl", "cc_library")
 
-# Custom Bazel build for LevelDB on Unix/MacOS
-# Simply depend on "@com_google_leveldb//:leveldb" for use
-#
-# For Windows, you may need to change LEVELDB_PLATFORM_POSIX to
-# LEVELDB_PLATFORM_WINDOWS and uncomment all the "...windows..."
-# in the "exclude" folder below. However, I haven't tested that.
+# Custom Bazel build for Parallel Hashmap
+# Simply depend on "@parallel_hashmap//:parallel_hashmap" for use
 cc_library(
-    name = "leveldb",
+    name = "parallel_hashmap",
     srcs = glob(
         ["**/*.cc"],
         exclude = [
-            "benchmarks/**",
-            "db/db_bench.cc",
-            "db/leveldbutil.cc",
             "doc/**",
             "**/*_test.cc",
-            "util/env_windows.cc",
+            "examples/**",
+            "benchmark/**",
+            "tests/**",
+            "css/**",
+            "html/**",
+            "cmake/**",
         ],
     ),
     hdrs = glob(
         ["**/*.h"],
         exclude = [
             "doc/**",
-            "benchmarks/**",
-            "util/windows_logger.h",
-            "util/env_windows*.h",
+            "examples/**",
+            "benchmark/**",
+            "tests/**",
+            "css/**",
+            "html/**",
+            "cmake/**",
         ],
     ),
     defines = [
-        "LEVELDB_PLATFORM_POSIX=1",
-        "LEVELDB_IS_BIG_ENDIAN=0",
-        "LEVELDB_BUILD_TESTS=0",
     ],
-    includes = ["include"],
     linkopts = [
         "-Wno-dev",
         "-pthread",
