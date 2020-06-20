@@ -21,3 +21,6 @@ COPY benchmarks/ ./benchmarks/
 
 # Build and cache the rest of the code
 COPY . .
+
+# Docker command after build
+CMD echo "Docker image is built successfully!"
