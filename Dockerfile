@@ -12,9 +12,11 @@ COPY scripts ./scripts
 
 # Source Code
 COPY src/ ./src/
+RUN bazel build src/...
 
 # Tests
 COPY tests/ ./tests/
+RUN bazel build tests/...
 
 # Benchmarks
 COPY benchmarks/ ./benchmarks/
