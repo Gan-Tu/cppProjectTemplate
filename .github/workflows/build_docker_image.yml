@@ -1,4 +1,4 @@
-name: Continously Build Docker Image
+name: Continuously Build Docker Image
 on:
   push:
     branches: [ master ]
