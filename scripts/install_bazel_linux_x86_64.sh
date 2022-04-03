@@ -9,7 +9,7 @@ fi
 # Download Linux installation script
 curl -fsSLO https://github.com/bazelbuild/bazel/releases/download/${BAZEL_VERSION}/bazel-${BAZEL_VERSION}-installer-linux-x86_64.sh
 if [[ $? != 0 ]]; then
-    echo "Failed to download Bazel installation scripts"
+    echo "Failed to download bazel installation scripts"
     exit 1
 fi
 # Download and compare binary checksum
